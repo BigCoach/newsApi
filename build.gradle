@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    ext {
+        accompanist_theme_version           = '0.16.0'
+        accompanist_version                 = '0.24.1-alpha'
+        activity_compose_version            = '1.4.0'
+        androidx_compose_version            = '2.4.2'
+        androidx_compose_lifecycle          = '2.4.1'
+        androidx_hilt_version               = '1.0.0'
+        app_check_version                   = '16.0.0-beta06'
+        chuck_version                       = '3.5.2'
+        compose_runtime_version             = '1.2.0-beta02'
+        compose_version                     = '1.1.1'
+        constraintlayout_compose_version    = '1.0.0'
+        coroutines_version                  = '1.6.1'
+        firebase_bom_version                = '29.0.1'
+        glide_version                       = '4.12.0'
+        gson_version                        = '2.8.9'
+        hilt_version                        = '2.38.1'
+        jetpack_datastore_version           = '1.0.0'
+        jetpack_security_version            = '1.0.0'
+        paging_compose_version              = '1.0.0-alpha14'
+        material_icons_version              = '1.2.0-beta01'
+        okHttp_version                      = '4.9.1'
+        retrofit_version                    = '2.9.0'
+        room_version                        = '2.4.2'
+        sdp_version                         = '1.0.6'
+        skydoves_glide_version              = '1.5.2'
+        timber_version                      = '5.0.1'
+        work_version                        = '2.7.1'
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.5.31' apply false
+    id 'com.google.dagger.hilt-android-gradle-plugin' version '2.38.1' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

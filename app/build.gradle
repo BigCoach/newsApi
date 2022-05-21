@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.newsapitest"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    //Jetpack Compose
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.material:material:$compose_runtime_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.paging:paging-compose:$paging_compose_version"
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constraintlayout_compose_version"
+    implementation "com.google.accompanist:accompanist-flowlayout:0.24.9-beta"
+    // Navigation Compose
+    implementation "androidx.navigation:navigation-compose:$androidx_compose_version"
+    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
+    implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
+    // Material design icons
+    implementation "androidx.compose.material:material-icons-core:$material_icons_version"
+    implementation "androidx.compose.material:material-icons-extended:$material_icons_version"
+    // Integration with ViewModels
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$androidx_compose_lifecycle"
+    // Integration with observables
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_runtime_version"
+    implementation "androidx.compose.runtime:runtime-rxjava2:$compose_runtime_version"
+    implementation "com.google.accompanist:accompanist-appcompat-theme:$accompanist_theme_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$androidx_compose_lifecycle"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    // Apache commons
+//    implementation files('libs/commons-codec-1.9.jar')
+    implementation group: 'commons-io', name: 'commons-io', version: '2.7'
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-work:$androidx_hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$androidx_hilt_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$androidx_hilt_version"
+    //Glide
+    implementation "com.github.skydoves:landscapist-glide:$skydoves_glide_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation("com.github.bumptech.glide:okhttp3-integration:$glide_version@aar")
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    // OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
+    //Gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+}
