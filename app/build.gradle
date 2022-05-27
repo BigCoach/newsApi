@@ -110,6 +110,7 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
     //Gson
     implementation "com.google.code.gson:gson:$gson_version"
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
